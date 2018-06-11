@@ -60,7 +60,7 @@ class MoneyWizAccount {
             }, null, dry);
 
             return this.insertTransactionData({
-                ...transaction.getData(),
+                ...transaction.getDataForSql(),
                 $Date: date,
                 $Amount: -data.$Amount,
                 $OriginalAmount: -data.$OriginalAmount,
