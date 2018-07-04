@@ -9,7 +9,7 @@ class MoneyWizConvertor {
     }
 
     getPayeeByMessage() {
-        const message = this.transaction.getMessage();
+        const message = `${this.transaction.data.type ? `${this.transaction.data.type}: ` : ''}${this.transaction.getMessage()}`;
 
         if (!message) {
             return null;
@@ -79,7 +79,7 @@ class MoneyWizConvertor {
             currency: this.transaction.getCurrency(),
             transferTo: this.getTransferAccount(),
             date: this.transaction.getCreatedDate(),
-            description: this.transaction.getMessage(),
+            description: `${this.transaction.data.type ? `${this.transaction.data.type}: ` : ''}${this.transaction.getMessage()}`,
             payee: this.getPayee(),
             category: this.getCategory(),
         });
