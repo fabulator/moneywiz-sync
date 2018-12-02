@@ -6,13 +6,11 @@ const ZonkyTransaction = require('./ZonkyTransaction');
 const api = new ZonkyApi();
 
 async function getZonkyTransactions(username, password) {
-    await api.login(username, password, ZonkyApi.SCOPES.FILE_DOWNLOAD);
+    await api.login(username, password);
 
-    const data = await api.downloadTransactions();
+    const zonkyWorkBook = new ZonkyWorkBook(await api.downloadTransactions());
 
-    const zonkyWorkBook = new ZonkyWorkBook(data);
-
-    return zonkyWorkBook.getTransactions()
+    return zonkyWorkBook.getTransactions(13)
         .filter((transaction) => {
             return transaction.type === 'Splátka půjčky' || transaction.type === 'Poplatek za investování';
         })

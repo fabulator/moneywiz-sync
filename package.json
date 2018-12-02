@@ -9,12 +9,13 @@
   "author": "Michal Ozogán",
   "license": "Apache License 2.0",
   "dependencies": {
-    "cross-fetch": "^2.2.0",
-    "fio-api-handler": "^0.2.0",
-    "luxon": "^1.2.1",
-    "sqlite3": "^4.0.0",
+    "cross-fetch": "^2.2.3",
+    "fio-api-handler": "^2.0.0",
+    "luxon": "^1.8.2",
+    "rest-api-handler": "^2.1.0",
+    "sqlite3": "^4.0.4",
     "vorpal": "^1.12.0",
-    "xlsx": "^0.13.0",
-    "zonky-api-handler": "^0.1.0"
+    "xlsx": "^0.14.1",
+    "zonky-api-handler": "^2.0.0"
   }
 }
